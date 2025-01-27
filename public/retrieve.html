@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve PDF</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Retrieve PDF</h2>
+        <button id="logoutButton" class="floating-logout">Logout</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload PDF</a></li>
+                <li><a href="retrieve.html">Retrieve PDF</a></li>
+                <li><a href="generate_token.html">Generate Token</a></li>
+                <li><a href="create_subadmin.html">Create Sublevel Admin</a></li>
+            </ul>
+        </nav>
+        <form id="retrievePdfForm">
+            <label>Search Key:</label>
+            <select name="search_key" id="search_key">
+                <option value="voucher_id">Voucher ID</option>
+                <option value="request_number">Request Number</option>
+                <option value="customerledger_id">Customer Ledger ID</option>
+                <option value="net_pay">Net Pay</option>
+                <option value="payee_address">Payee Address</option>
+                <option value="bank_name">Bank Name</option>
+                <option value="account_number">Account Number</option>
+            </select><br>
+            <label>Search Value:</label>
+            <input type="text" name="search_value" id="search_value" required><br>
+            <label>Token:</label>
+            <input type="text" name="token" id="token" required><br>
+            <button type="submit">Retrieve PDF</button>
+        </form>
+        <p id="response"></p>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

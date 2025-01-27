@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload PDF</h2>
+        <button id="logoutButton" class="floating-logout">Logout</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload PDF</a></li>
+                <li><a href="retrieve.html">Retrieve PDF</a></li>
+                <li><a href="generate_token.html">Generate Token</a></li>
+                <li><a href="create_subadmin.html">Create Sublevel Admin</a></li>
+            </ul>
+        </nav>
+        <form id="uploadForm">
+            <label>Voucher ID:</label>
+            <input type="text" name="voucher_id" required><br>
+            <label>Request Number:</label>
+            <input type="text" name="request_number" required><br>
+            <label>Customer Ledger ID:</label>
+            <input type="text" name="customerledger_id" required><br>
+            <label>Net Pay:</label>
+            <input type="text" name="net_pay" required><br>
+            <label>Payee Address:</label>
+            <input type="text" name="payee_address" required><br>
+            <label>Bank Name:</label>
+            <input type="text" name="bank_name" required><br>
+            <label>Account Number:</label>
+            <input type="text" name="account_number" required><br>
+            <label>PDF File:</label>
+            <input type="file" name="pdf_file" required><br>
+            <button type="submit">Upload PDF</button>
+        </form>
+        <p id="response"></p>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

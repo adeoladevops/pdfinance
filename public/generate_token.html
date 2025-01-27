@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Token</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Login and Generate Token</h2>
+        <button id="logoutButton" class="floating-logout">Logout</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload PDF</a></li>
+                <li><a href="retrieve.html">Retrieve PDF</a></li>
+                <li><a href="generate_token.html">Generate Token</a></li>
+                <li><a href="create_subadmin.html">Create Sublevel Admin</a></li>
+            </ul>
+        </nav>
+        <form id="generateTokenForm">
+            <label>Username:</label>
+            <input type="text" name="username" required><br>
+            <label>Password:</label>
+            <input type="password" name="password" required><br>
+            <button type="submit">Generate Token</button>
+        </form>
+        <p id="response" style="font-weight: bold; color: green;"></p>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Sublevel Admin</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Sublevel Admin</h2>
+        <button id="logoutButton" class="floating-logout">Logout</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload PDF</a></li>
+                <li><a href="retrieve.html">Retrieve PDF</a></li>
+                <li><a href="generate_token.html">Generate Token</a></li>
+                <li><a href="create_subadmin.html">Create Sublevel Admin</a></li>
+            </ul>
+        </nav>
+        <form id="createSubAdminForm">
+            <label>Username:</label>
+            <input type="text" name="username" id="username" required><br>
+            <label>Password:</label>
+            <input type="password" name="password" id="password" required><br>
+            <label>Access Level:</label>
+            <select name="access_level" id="access_level">
+                <option value="1">Upload Only</option>
+                <option value="2">Upload and Generate Token</option>
+                <option value="3">Upload, Generate Token, and Retrieve PDF</option>
+                <option value="4">Generate Token, Create Sublevel Admin</option>
+                <option value="5">Full Access</option>
+            </select><br>
+            <button type="submit">Create Sublevel Admin</button>
+        </form>
+        <p id="response" style="color: green;"></p>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

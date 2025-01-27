@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="styless.css"> <!-- Optional: Add your CSS for styling -->
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Login</h1>
+        <button id="logoutButton" class="floating-logout">Logout</button>
+        <div id="taskButtons" class="hidden">
+            <div class="buttons">
+                <a href="index.html"><button>Home</button></a>
+                <a href="/upload.html"><button>Upload PDF</button></a>
+                <a href="/retrieve.html"><button>Retrieve PDF</button></a>
+                <a href="/generate_token.html"><button>Generate Token</button></a>
+                <a href="/create_subadmin.html"><button>Create Subadmin</button></a>
+            </div>
+            <h2>Access granted! Proceed to your tasks:</h2>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        <div id="taskButtons" class="hidden">
+            <h2>Access granted! Proceed to your tasks:</h2>
+        </div>
+
+    <script>
+        // Handle Login
+        document.getElementById("loginForm")?.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const response = await fetch("/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert("Login successful!");
+                    document.getElementById("loginForm").classList.add("hidden");
+                    document.getElementById("taskButtons").classList.remove("hidden");
+                } else {
+                    alert(`Error: ${result.error || "Invalid credentials"}`);
+                }
+            } catch (error) {
+                console.error("Login failed:", error);
+                alert("An unexpected error occurred during login.");
+            }
+        });
+    </script>
+</body>
+</html>
